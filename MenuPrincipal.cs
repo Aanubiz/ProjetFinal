@@ -43,7 +43,7 @@ namespace ProjetFinal
 
           case "1":
 
-            Facturation.Facture(panier, userName);
+           // Facturation.Facture(panier, userName);
             Console.Clear();
             AjoutArticle.ListeArticle(panier);
             Console.Clear();
