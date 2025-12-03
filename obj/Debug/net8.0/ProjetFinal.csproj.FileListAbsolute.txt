@@ -12,6 +12,7 @@
 /home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.pdb
 /home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.genruntimeconfig.cache
 /home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ref/ProjetFinal.dll
+<<<<<<< HEAD
 C:\Users\66230\OneDrive\Desktop\ProjetFinal\bin\Debug\net8.0\ProjetFinal.exe
 C:\Users\66230\OneDrive\Desktop\ProjetFinal\bin\Debug\net8.0\ProjetFinal.deps.json
 C:\Users\66230\OneDrive\Desktop\ProjetFinal\bin\Debug\net8.0\ProjetFinal.runtimeconfig.json
@@ -27,3 +28,20 @@ C:\Users\66230\OneDrive\Desktop\ProjetFinal\obj\Debug\net8.0\refint\ProjetFinal.
 C:\Users\66230\OneDrive\Desktop\ProjetFinal\obj\Debug\net8.0\ProjetFinal.pdb
 C:\Users\66230\OneDrive\Desktop\ProjetFinal\obj\Debug\net8.0\ProjetFinal.genruntimeconfig.cache
 C:\Users\66230\OneDrive\Desktop\ProjetFinal\obj\Debug\net8.0\ref\ProjetFinal.dll
+=======
+C:\Users\alexa\Downloads\ProjetFinal\bin\Debug\net8.0\ProjetFinal.exe
+C:\Users\alexa\Downloads\ProjetFinal\bin\Debug\net8.0\ProjetFinal.deps.json
+C:\Users\alexa\Downloads\ProjetFinal\bin\Debug\net8.0\ProjetFinal.runtimeconfig.json
+C:\Users\alexa\Downloads\ProjetFinal\bin\Debug\net8.0\ProjetFinal.dll
+C:\Users\alexa\Downloads\ProjetFinal\bin\Debug\net8.0\ProjetFinal.pdb
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.AssemblyInfoInputs.cache
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.AssemblyInfo.cs
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.sourcelink.json
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.dll
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\refint\ProjetFinal.dll
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.pdb
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ProjetFinal.genruntimeconfig.cache
+C:\Users\alexa\Downloads\ProjetFinal\obj\Debug\net8.0\ref\ProjetFinal.dll
+>>>>>>> 2f94490c10647134ed2a1e25f4b572edc1d966fd

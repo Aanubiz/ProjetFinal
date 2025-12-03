@@ -26,7 +26,7 @@ namespace ProjetFinal
         if (avant == apres)
         {
           Console.ForegroundColor = ConsoleColor.Red;
-          Console.Write("Choix non disponible");
+          Console.WriteLine("Choix non disponible");
           Console.ResetColor();
 
         }

@@ -43,8 +43,11 @@ namespace ProjetFinal
 
           case "1":
 
+<<<<<<< HEAD
 
             Console.Clear();
+=======
+>>>>>>> 2f94490c10647134ed2a1e25f4b572edc1d966fd
             AjoutArticle.ListeArticle(panier);
             Console.Clear();
            AffichageMenu();
