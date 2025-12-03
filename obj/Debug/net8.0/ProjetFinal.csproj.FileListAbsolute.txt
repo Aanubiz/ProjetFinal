@@ -1,0 +1,14 @@
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.GeneratedMSBuildEditorConfig.editorconfig
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.AssemblyInfoInputs.cache
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.AssemblyInfo.cs
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.csproj.CoreCompileInputs.cache
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/bin/Debug/net8.0/ProjetFinal
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/bin/Debug/net8.0/ProjetFinal.deps.json
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/bin/Debug/net8.0/ProjetFinal.runtimeconfig.json
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/bin/Debug/net8.0/ProjetFinal.dll
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/bin/Debug/net8.0/ProjetFinal.pdb
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.dll
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/refint/ProjetFinal.dll
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.pdb
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.genruntimeconfig.cache
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ref/ProjetFinal.dll
