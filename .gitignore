@@ -1,0 +1,68 @@
+Fichier .gitignore standard pour les projets C# / .NET
+
+-----------------
+
+1. Dossiers de construction et binaires
+
+-----------------
+
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+Les résultats de la construction par Visual Studio
+
+*.exe
+*.dll
+*.pdb
+*.tmp
+*.user
+*.suo
+
+Dossiers et fichiers d'artefacts NuGet
+
+.nuget/
+NuGet.config
+packages/
+*.nupkg
+
+-----------------
+
+2. Outils et environnements de développement
+
+-----------------
+
+Visual Studio (VS) et Visual Studio Code (VS Code)
+
+.vs/
+*.vsp
+*.log
+*.bak
+*.ide
+*.ncb
+*.aps
+
+VS Code settings (décommentez si vous ne voulez pas partager les settings locaux)
+
+#.vscode/
+
+-----------------
+
+3. Fichiers de dépendances et cache
+
+-----------------
+
+Fichiers de configuration de l'utilisateur
+
+*.userprefs
+*.csproj.user
+
+Cache de tests
+
+TestResults/
+
+Logs et autres fichiers temporaires
+
+*.log
+temp/
