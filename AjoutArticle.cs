@@ -26,7 +26,7 @@ namespace ProjetFinal
       
       foreach (var item in articles)
       {
-        Console.WriteLine($"{item.code}: {item.nom} - {item.prix}\n");
+        Console.WriteLine($"{item.code}: {item.nom,-15} - {item.prix,15}\n");
       }
 
       /*---------- On recupère les sélections de l'utilisateur -----------*/
