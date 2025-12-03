@@ -29,7 +29,7 @@ namespace ProjetFinal
       {
 
         Console.Write("________________________\n");
-        Console.Write("Sélectionnez une option:\n => ");
+        Console.Write("Sélectionne une option:\n => ");
         string choix_utilisateur = Console.ReadLine() ?? "";
 
         // switch
@@ -43,7 +43,7 @@ namespace ProjetFinal
 
           case "1":
 
-           // Facturation.Facture(panier, userName);
+
             Console.Clear();
             AjoutArticle.ListeArticle(panier);
             Console.Clear();
