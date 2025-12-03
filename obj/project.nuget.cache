@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jhfUL8dpNHc=",
+  "dgSpecHash": "LNrrbu4lzeg=",
   "success": true,
-  "projectFilePath": "/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/ProjetFinal.csproj",
-  "expectedPackageFiles": [
-    "/home/idris/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512",
-    "/home/idris/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.20/microsoft.netcore.app.host.linux-x64.8.0.20.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\alexa\\Downloads\\ProjetFinal\\ProjetFinal.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
