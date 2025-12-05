@@ -12,3 +12,4 @@
 /home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.pdb
 /home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.genruntimeconfig.cache
 /home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ref/ProjetFinal.dll
+/home/idris/Desktop/Idris/UA3/Alex/ProjetFinal/obj/Debug/net8.0/ProjetFinal.sourcelink.json

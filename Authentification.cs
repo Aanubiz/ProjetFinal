@@ -6,23 +6,21 @@ namespace ProjetFinal
   class Authentification
   {
     
-     /*------ Cette méthode gère la connexion de l'employé et lance le menu ------*/
-    public static void CodeUtilisateur()
+     /*-- Cette méthode gère la connexion de l'employé et lance le menu --*/
+    public static void CodeUtilisateur(List<(string code, string nom, decimal prix)> panier)
     {
-      /*------ Déclaration de variable --------*/
+      /*-- Déclaration de variable --*/
 
       string [] id = {"001", "002", "003","004","005"}; //Tableau des identifiants
       string [] noms = {"sammir", "Mohamed","Afef","Jean-Gabriel","Eve"}; //Tableau des noms
 
-      bool idCorrect = false; //Vérifier si la condition est rempli
-      string userName = ""; //Pour stocker le nom correspondant à l'entrée utilisateur
-      
-     
-      List<(string code, string nom, decimal prix)> panier = new List<(string code, string nom, decimal prix)>();
+      bool idCorrect = false; //Vérifier si l'utilisateur entre une id correct
+      string userName = ""; //Stocker le nom correspondant à l'entrée de utilisateur
+      string userCode = ""; //Stocker le nom correspondant à l'entrée de utilisateur
       
       while (!idCorrect) //Si idCorrect == false, la condition est vrai donc la boucle continue
       {
-        Console.Clear();
+        //Console.Clear();
         Console.WriteLine("_________________________________");
         Console.Write("Veuillez saisir votre identifiant\n => ");
          
@@ -33,6 +31,7 @@ namespace ProjetFinal
           if (id[i] == idEntré)
           {
             userName = noms[i]; //On récupère le nom correspondant
+            userCode = id[i]; //On récupère le nom correspondant
            
             idCorrect = true; //La condition devient vrai si l'identifiant est trouvé
             break;
@@ -41,21 +40,14 @@ namespace ProjetFinal
         //On affiche résultat
         if (idCorrect)
         {
-          // On utilise directement les variables locales (userName)
-          Console.ForegroundColor = ConsoleColor.Green;
-          Console.WriteLine($"\n ✅ Bonjour {userName}\n\n"); //Si la boucle a trouvé l'Id
-          Console.ResetColor();
-          
           // Lancement du menu principal après une pause pour voir le message de bienvenue
-          //System.Threading.Thread.Sleep(1000); 
-          MenuPrincipal.Menu(panier, userName);
+          MenuPrincipal.Menu(panier, userCode, userName);
         }
         else
         {
           Console.ForegroundColor = ConsoleColor.Red;
           Console.WriteLine($"\n ❌ Numéro d'employé invalide!"); //Si l'entrée utilisateur ne correspond a aucune id
           Console.ResetColor();
-          System.Threading.Thread.Sleep(1500); // Laisse plus de temps pour lire l'erreur
         }
         
       }

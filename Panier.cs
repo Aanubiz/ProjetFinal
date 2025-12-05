@@ -41,7 +41,7 @@ namespace ProjetFinal
         Console.WriteLine($"TOTAL: {totalPrix,28}$");
         Console.ResetColor();
       }
-      Console.WriteLine("\nAppuyez sur une touche pour revenir au menu...");
+      Console.Write("Appuyez sur n'importe quelle touche pour revenir au menu...");
       Console.ReadKey();
       Console.Clear();
     }

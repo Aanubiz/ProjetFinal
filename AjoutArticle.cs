@@ -3,7 +3,7 @@ using System;
 namespace ProjetFinal
 {
   class AjoutArticle
-  { /*------ Cette méthode gère l'ajout des nouveaux articles ------*/
+  { /*-- Cette méthode gère l'ajout des nouveaux articles --*/
     public static void ListeArticle(List<(string code, string nom, decimal prix)> panier)
     {
       
@@ -29,11 +29,11 @@ namespace ProjetFinal
         Console.WriteLine($"{item.code}: {item.nom} - {item.prix}\n");
       }
 
-      /*---------- On recupère les sélections de l'utilisateur -----------*/
+      /*-- On recupère les sélections de l'utilisateur --*/
       while (true)
       {
         Console.WriteLine("\n_______________________________________________");
-        Console.WriteLine("Sélectionnez un article ou tapez 'q' pour quitter");
+        Console.Write("Sélectionnez un article ou tapez 'q' pour quitter\n\n =>");
         var codeEntré = Console.ReadLine();
         bool verifCode = false;
 
