@@ -21,7 +21,7 @@ namespace ProjetFinal
     public static void Menu(List<(string code, string nom, decimal prix)> panier, string userName)
     {
 
-      Console.Clear();
+     Console.Clear();
       AffichageMenu();
 
 
@@ -37,7 +37,7 @@ namespace ProjetFinal
         {
           // quand l'utilisateur choisi ajouter article
           case "0":
-            Console.Clear();
+           // Console.Clear();
             Facturation.Facture(panier, userName);
             return;
 
