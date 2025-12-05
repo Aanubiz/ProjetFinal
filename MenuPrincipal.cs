@@ -32,7 +32,7 @@ namespace ProjetFinal
       {
 
         Console.Write("________________________\n");
-        Console.Write("Sélectionnez une option:\n => ");
+        Console.Write("Sélectionne une option:\n => ");
         string choix_utilisateur = Console.ReadLine() ?? "";
 
         // switch
@@ -52,6 +52,8 @@ namespace ProjetFinal
               Facturation.Facture(panier, userCode, userName);
             }
            break;
+
+         
 
           case "1":
             Console.Clear();
