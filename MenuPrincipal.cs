@@ -32,7 +32,7 @@ namespace ProjetFinal
       {
 
         Console.Write("________________________\n");
-        Console.Write("Sélectionne une option:\n => ");
+        Console.Write("Sélectionnez une option:\n\n => ");
         string choix_utilisateur = Console.ReadLine() ?? "";
 
         // switch
@@ -41,8 +41,8 @@ namespace ProjetFinal
           // quand l'utilisateur choisi ajouter article
           case "0":
             Console.Clear();
-            var test = panier.Count;
-            if (test == 0)
+            var verifPanier = panier.Count;
+            if (verifPanier == 0)
             {
               Console.WriteLine("❌ Votre panier est vide...");
               AffichageMenu();
@@ -50,10 +50,9 @@ namespace ProjetFinal
             else
             {
               Facturation.Facture(panier, userCode, userName);
+              return;
             }
            break;
-
-         
 
           case "1":
             Console.Clear();
@@ -79,10 +78,6 @@ namespace ProjetFinal
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("❌ choix invalide...");
             Console.ResetColor();
-            // Petite pause et nettoyage pour afficher les options à nouveau
-            System.Threading.Thread.Sleep(500);
-            Console.Clear();
-            AffichageMenu();
             break;
         }
       }

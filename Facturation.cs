@@ -6,11 +6,20 @@ namespace ProjetFinal
   {
     public static void Facture(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
+      const decimal TPS = 0.05M;
+      const decimal TVQ = 0.09975M;
+      const decimal pourcentageRabais = 0.25M;
+
+      decimal montantTPS;
+      decimal montantTVQ;
+
       int nombreArticle;
+      decimal factureHT = 0;
       decimal factureTotale = 0;
-      const decimal TPS = 22.53M;
-      const decimal TVQ = 44.95M;
-      
+      decimal rabaisAppliqué = 0;
+      Random random = new Random();
+      int chanceRabaisMystère = random.Next(0, 2);
+
       Console.WriteLine("_____________________________________________________");
       Console.WriteLine("|                                                   |");
       Console.WriteLine("|          ****** F A C T U R E ******              |");
@@ -22,40 +31,53 @@ namespace ProjetFinal
       Console.WriteLine("|                                                   |");
       foreach (var item in panier)
       {
-        Console.WriteLine($"|     *{item.nom,-30}{item.prix,1}$");
-        factureTotale += item.prix;
+        Console.WriteLine($"|     ≫ {item.nom,-30}{item.prix,1}$");
+        factureHT += item.prix;
       }
       //On compte le nombre d'article dans le panier
       nombreArticle = panier.Count;
       /*-- On défini la date selon le format --*/
       DateTime date = DateTime.Today;
       string dateSeule = date.ToString("d");
-      
+
       /*-- On défini l'heure selon le format --*/
       DateTime heure = DateTime.Now;
       string heureSeule = heure.ToString("T");
 
       Console.WriteLine("|                                                   |");
       Console.WriteLine("|                                                   |");
-      Console.WriteLine($"|       Rabais mystère                 {0}          ");
-      Console.WriteLine("|                                                   |");
       Console.WriteLine("|     -------------------------------------         |");
       Console.WriteLine("|                                                   |");
+      Console.WriteLine($"|      Nombre d'articles:         {nombreArticle,1} ");
       Console.WriteLine("|                                                   |");
-      Console.WriteLine($"|      Nombre d'articles:          {nombreArticle,1}");
-      Console.WriteLine("|                                                   |");
-      Console.WriteLine($"|      Total hors taxe:            {factureTotale,1}");
-      Console.WriteLine($"|      TPS:                            {TPS,1}      ");
-      Console.WriteLine($"|      TVQ:                            {TVQ,1}      ");
-      Console.WriteLine("|                                                   |");
-      Console.WriteLine("|                                                   |");
-      Console.WriteLine($"|      TOTAL           {factureTotale + TPS + TVQ,1}");
-      Console.WriteLine("|                                                   |");
-      Console.WriteLine("|                                                   |");
-      Console.WriteLine("|      Le système applique automatiquement          |");
-      Console.WriteLine("|        et de façon aléatoire un rabais            |");
-      Console.WriteLine("|         mystère aux facture éligible.             |");
-      Console.WriteLine("|              Bonne chance!!!                      |");
+      decimal facturerabaissé = factureHT;
+
+      montantTPS = Math.Round(facturerabaissé * TPS, 2, MidpointRounding.AwayFromZero);
+      montantTVQ = Math.Round(facturerabaissé * TVQ, 2, MidpointRounding.AwayFromZero);
+
+      if (chanceRabaisMystère == 1)
+      {
+
+        rabaisAppliqué = Math.Round(factureHT * pourcentageRabais, 2, MidpointRounding.AwayFromZero);
+        facturerabaissé = Math.Round(factureHT - rabaisAppliqué, 2, MidpointRounding.AwayFromZero);
+        factureTotale = Math.Round(facturerabaissé + TPS + TVQ * TVQ, 2, MidpointRounding.AwayFromZero);
+
+        Console.WriteLine($"|      Rabais mystère         {rabaisAppliqué}  ");
+        Console.WriteLine("|     -------------------------------------  |\n ");
+        Console.WriteLine($"|      Total hors taxe:       {facturerabaissé} ");
+        Console.WriteLine($"|      TPS:                   {montantTPS}             ");
+        Console.WriteLine($"|      TVQ:                   {montantTVQ}             ");
+        Console.WriteLine($"|      TOTAL                  {factureTotale}   ");
+      }
+      else
+      {
+        factureTotale = Math.Round(factureHT + TPS + TVQ, 2, MidpointRounding.AwayFromZero);
+
+        Console.WriteLine($"|      Total hors taxe:       {factureHT}       ");
+        Console.WriteLine($"|      TPS:                   {montantTPS}             ");
+        Console.WriteLine($"|      TVQ:                   {montantTVQ}             ");
+        Console.WriteLine($"|      TOTAL                  {factureTotale}   ");
+      }
       Console.WriteLine("|                                                   |");
       Console.WriteLine("|     ************************************          |");
       Console.WriteLine("|                                                   |");

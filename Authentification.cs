@@ -12,7 +12,7 @@ namespace ProjetFinal
       /*-- Déclaration de variable --*/
 
       string [] id = {"001", "002", "003","004","005"}; //Tableau des identifiants
-      string [] noms = {"sammir", "Mohamed","Afef","Jean-Gabriel","Eve"}; //Tableau des noms
+      string [] noms = {"samir", "Mohamed","Afef","Jean-Gabriel","Eve"}; //Tableau des noms
 
       bool idCorrect = false; //Vérifier si l'utilisateur entre une id correct
       string userName = ""; //Stocker le nom correspondant à l'entrée de utilisateur

@@ -23,7 +23,7 @@ namespace ProjetFinal
       if (panier.Count == 0)
       {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Le panier est vide.");
+        Console.WriteLine("      Le panier est vide.");
         Console.ResetColor();
       }
       else
@@ -41,7 +41,7 @@ namespace ProjetFinal
         Console.WriteLine($"TOTAL: {totalPrix,28}$");
         Console.ResetColor();
       }
-      Console.Write("Appuyez sur n'importe quelle touche pour revenir au menu...");
+      Console.Write("Appuyez sur n'importe quelle touche pour revenir au menu...\n\n");
       Console.ReadKey();
       Console.Clear();
     }

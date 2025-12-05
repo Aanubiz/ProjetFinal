@@ -33,7 +33,7 @@ namespace ProjetFinal
       while (true)
       {
         Console.WriteLine("\n_______________________________________________");
-        Console.Write("Sélectionnez un article ou tapez 'q' pour quitter\n\n =>");
+        Console.Write("Sélectionnez un article ou tapez 'q' pour quitter\n\n => ");
         var codeEntré = Console.ReadLine();
         bool verifCode = false;
 
