@@ -3,13 +3,13 @@ using System;
 namespace ProjetFinal
 {
   class AjoutArticle
-  { /*------ Cette méthode gère l'ajout des nouveaux articles ------*/
+  { /*-- Cette méthode gère l'ajout des nouveaux articles --*/
     public static void ListeArticle(List<(string code, string nom, decimal prix)> panier)
     {
       
       /*--------- Déclaration de la liste des articles --------------*/
       List<(string code, string nom, decimal prix)> articles = new ();
-      articles.Add(("A1", "Crayons", 3.99M));
+      articles.Add(("A1", "Crayon", 3.99M));
       articles.Add(("A2", "Cahier Canada", 1.59M));
       articles.Add(("B1", "Table Pliante", 66.99M));
       articles.Add(("B2", "Fauteuil en cuir", 199.99M));
@@ -26,14 +26,14 @@ namespace ProjetFinal
       
       foreach (var item in articles)
       {
-        Console.WriteLine($"{item.code}: {item.nom} - {item.prix}\n");
+        Console.WriteLine($"{item.code}: {item.nom,-15} - {item.prix,15}\n");
       }
 
-      /*---------- On recupère les sélections de l'utilisateur -----------*/
+      /*-- On recupère les sélections de l'utilisateur --*/
       while (true)
       {
         Console.WriteLine("\n_______________________________________________");
-        Console.WriteLine("Sélectionnez un article ou tapez 'q' pour quitter");
+        Console.Write("Sélectionnez un article ou tapez 'q' pour quitter\n\n => ");
         var codeEntré = Console.ReadLine();
         bool verifCode = false;
 

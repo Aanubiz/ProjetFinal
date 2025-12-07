@@ -1,45 +1,67 @@
 using System;
+using System.Collections.Generic;
 
 namespace ProjetFinal
 {
   class SuppressionArticle
   {
-     public static void Supprimer(List<(string code, string nom, decimal prix)> panier)
+    public static void Supprimer(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
-      // declaration des variables
-      string utilisateu_supprimer = "";
-      
-      Console.Write("");
-
+      // Démarre la boucle de suppression
       while (true)
       {
+        Console.Write("Sélectionnez le code de l'article à supprimer ou appuyez sur 'q' pour quitter\n\n => ");
+        // Utilisation du string? pour gérer la nullité potentielle de Console.ReadLine()
+        string article_supprimé = Console.ReadLine();
 
-        Console.Write("Sélectionnez un article ou appuyez sur 'q' pour quitter\n => ");
-        utilisateu_supprimer = Console.ReadLine() ?? "";
-        // le nombre d'article disponible dans le panier avant la suppresion
-        int avant = panier.Count;
-        panier.RemoveAll(item => item.code == utilisateu_supprimer);
+        if (article_supprimé == "q")
+        {
+          // Retourne au menu principal
+          MenuPrincipal.Menu(panier, userCode, userName);
+          // Sort de la fonction Supprimer et met fin à la boucle infinie
+          return; 
+        }
 
-        // le nombre d'article disponible dans le panier apres la suppresion
-        int apres = panier.Count;
+        // Reset du drapeau de vérification pour cette tentative de suppression
+        bool verifCode = false;
 
-        if (avant == apres)
+        // 2. Recherche et suppression de l'article
+        // IMPORTANT : Pour éviter l'erreur de modification de la collection lors de l'itération,
+        // nous utilisons une boucle for inversée ou nous sortons immédiatement après Remove.
+        // Pour respecter votre structure de foreach, nous allons chercher l'index et sortir.
+
+        // Trouver l'index de l'article pour une suppression sûre
+        int indexASupprimer = -1;
+        for (int i = 0; i < panier.Count; i++)
+        {
+            if (panier[i].code == article_supprimé)
+            {
+                indexASupprimer = i;
+                break; // Article trouvé, on sort de la boucle de recherche
+            }
+        }
+
+        if (indexASupprimer != -1)
+        {
+            // Suppression de l'élément à l'index trouvé
+            panier.RemoveAt(indexASupprimer);
+            verifCode = true;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"  ✅ '{article_supprimé}' retiré du panier.");
+            Console.ResetColor();
+            
+            // L'article a été trouvé et supprimé. On sort de la boucle while pour revenir à la saisie.
+            // La boucle while recommence pour demander la prochaine action.
+        }
+
+        /*---   Si l'utilisateur entre un code non valide --------*/
+        if (verifCode == false)
         {
           Console.ForegroundColor = ConsoleColor.Red;
-          Console.Write("Choix non disponible");
+          Console.WriteLine($"  ❌ Cet article n'est pas dans votre panier.");
           Console.ResetColor();
-
-        }
-
-        else
-        {
-          Console.ForegroundColor = ConsoleColor.Green;
-          Console.WriteLine($"\n ✅ Article Supprimé\n\n"); //Si la boucle a trouvé l'Id
-          Console.ResetColor();
-          break;
-
         }
       }
-  }
+    }
   }
 }

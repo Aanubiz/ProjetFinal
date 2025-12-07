@@ -4,60 +4,94 @@ namespace ProjetFinal
 {
   class Facturation
   {
-    public static void Facture(List<(string code, string nom, decimal prix)> panier, string employe)
+    public static void Facture(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
-      // declaration des variables
-      double sous_total = 0;
+      const decimal TPS = 0.05M;
+      const decimal TVQ = 0.09975M;
+      const decimal pourcentageRabais = 0.25M;
 
-      Console.WriteLine("       Sous-total:    " + sous_total + "$");
-      // declaration de variable TPS (taxe des produit et service)
-      double TPS = 0.05;
-      TPS = TPS * sous_total;
+      decimal montantTPS;
+      decimal montantTVQ;
 
-      // arrontir le TPS
-      double TPS_arrondi = Math.Round(TPS, 2);
+      int nombreArticle;
+      decimal factureHT = 0;
+      decimal factureTotale = 0;
+      decimal rabaisAppliqué = 0;
+      Random random = new Random();
+      int chanceRabaisMystère = random.Next(0, 2);
 
-      // affichage
-      Console.WriteLine("              TPS:     " + TPS_arrondi + "$");
+      Console.WriteLine("_____________________________________________________");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|          ****** F A C T U R E ******              |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|   PRODUITS                                        |");
+      Console.WriteLine("|                                                   |");
+      foreach (var item in panier)
+      {
+        Console.WriteLine($"|     ≫ {item.nom,-30}{item.prix,1}$");
+        factureHT += item.prix;
+      }
+      //On compte le nombre d'article dans le panier
+      nombreArticle = panier.Count;
+      /*-- On défini la date selon le format --*/
+      DateTime date = DateTime.Today;
+      string dateSeule = date.ToString("d");
 
-      // declaration de la variable TVQ (taxe des ventes et service)
-      double TVQ = 0.09975;
-      TVQ = TVQ * sous_total;
+      /*-- On défini l'heure selon le format --*/
+      DateTime heure = DateTime.Now;
+      string heureSeule = heure.ToString("T");
 
-      // arrondir le  TVQ 
-      double TVQ_arrondi = Math.Round(TVQ, 2);
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|     -------------------------------------         |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine($"|      Nombre d'articles:         {nombreArticle,1} ");
+      Console.WriteLine("|                                                   |");
+      decimal facturerabaissé = factureHT;
 
-      // affichage du TVQ
-      Console.WriteLine("              TVQ:     " + TVQ_arrondi + "$");
+      montantTPS = Math.Round(facturerabaissé * TPS, 2, MidpointRounding.AwayFromZero);
+      montantTVQ = Math.Round(facturerabaissé * TVQ, 2, MidpointRounding.AwayFromZero);
 
-      // calcul de la somme des taxe 
-      double somme_taxe;
-      somme_taxe = TPS_arrondi + TVQ_arrondi;
+      if (chanceRabaisMystère == 1)
+      {
 
-      // calcul du total
-      double total;
-      total = sous_total + somme_taxe;
+        rabaisAppliqué = Math.Round(factureHT * pourcentageRabais, 2, MidpointRounding.AwayFromZero);
+        facturerabaissé = Math.Round(factureHT - rabaisAppliqué, 2, MidpointRounding.AwayFromZero);
+        factureTotale = Math.Round(facturerabaissé + TPS + TVQ * TVQ, 2, MidpointRounding.AwayFromZero);
 
-      // affichage du total
-      Console.WriteLine("            Total:    " + total + "$");
-      Console.WriteLine("***************************");
+        Console.WriteLine($"|      Rabais mystère         {rabaisAppliqué}  ");
+        Console.WriteLine("|     -------------------------------------  |\n ");
+        Console.WriteLine($"|      Total hors taxe:       {facturerabaissé} ");
+        Console.WriteLine($"|      TPS:                   {montantTPS}             ");
+        Console.WriteLine($"|      TVQ:                   {montantTVQ}             ");
+        Console.WriteLine($"|      TOTAL                  {factureTotale}   ");
+      }
+      else
+      {
+        factureTotale = Math.Round(factureHT + TPS + TVQ, 2, MidpointRounding.AwayFromZero);
 
-      // afficher le nom de l'employe qui a servi
-      Console.WriteLine("Vous avez été servi par " + employe);
-      Console.WriteLine("");
-
-      // afficher la date
-      string date = DateTime.Now.ToString("dd/MM/yyyy");
-
-      Console.WriteLine("Date : " + date);
-      Console.WriteLine("");
-
-      // afficher l'heure
-      string heure = DateTime.Now.ToString("HH:mm:ss");
-      Console.WriteLine("Heure : " + heure);
-      Console.WriteLine("");
-      Console.WriteLine("***************************");
-
+        Console.WriteLine($"|      Total hors taxe:       {factureHT}       ");
+        Console.WriteLine($"|      TPS:                   {montantTPS}             ");
+        Console.WriteLine($"|      TVQ:                   {montantTVQ}             ");
+        Console.WriteLine($"|      TOTAL                  {factureTotale}   ");
+      }
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|     ************************************          |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine($"|     Vous avez été servi par:       {userName}     ");
+      Console.WriteLine($"|     Caisse N°:                     {userCode}     ");
+      Console.WriteLine($"|     Méthode de payement:                         |");
+      Console.WriteLine($"|     Date:                         {dateSeule}     ");
+      Console.WriteLine($"|     Heure:                        {heureSeule}    ");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|     ************************************          |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|             MERCI POUR VOTRE VISITE               |");
+      Console.WriteLine("|                                                   |");
+      Console.WriteLine("|___________________________________________________|");
 
     }
   }
