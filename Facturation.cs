@@ -12,6 +12,7 @@ namespace ProjetFinal
     /// <param name="userName"></param>
     public static void Facture(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
+      Console.Clear();
       //-- On déclare les taxes comme étant des constantes
       const decimal TPS = 0.05M; 
       const decimal TVQ = 0.09975M;
