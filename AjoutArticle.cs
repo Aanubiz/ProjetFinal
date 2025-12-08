@@ -3,7 +3,14 @@ using System;
 namespace ProjetFinal
 {
   class AjoutArticle
-  { /*-- Cette méthode gère l'ajout des nouveaux articles --*/
+  { 
+    /// <summary>
+    /// Cette procédure permet à l'utilisateur d'ajouter des articles dans le panier
+    /// L'utilisateur doit utiliser uniquement les code des article pour effectuer les ajouts
+    /// Si l'utilisateur sélectionne un article inexistant, ou se trompe sur le code, 
+    /// un message d'erreur lui est envoyé
+    /// </summary>
+    /// <param name="panier"></param>
     public static void ListeArticle(List<(string code, string nom, decimal prix)> panier)
     {
       

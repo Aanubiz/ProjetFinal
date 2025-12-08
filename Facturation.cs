@@ -4,6 +4,12 @@ namespace ProjetFinal
 {
   class Facturation
   {
+    /// <summary>
+    /// Cette procédure permet d'afficher la facture avec tout les paramètre
+    /// </summary>
+    /// <param name="panier"></param>
+    /// <param name="userCode"></param>
+    /// <param name="userName"></param>
     public static void Facture(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
       //-- On déclare les taxes comme étant des constantes

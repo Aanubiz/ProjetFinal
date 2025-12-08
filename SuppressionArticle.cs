@@ -5,6 +5,14 @@ namespace ProjetFinal
 {
   class SuppressionArticle
   {
+    /// <summary>
+    /// Cette procédure permet à l'utilisateur de supprimer les articles précédement ajouté au panier
+    /// en renseignant le code la l'article.
+    /// Lorsque l'article est inexistant dans le panier, le programme informe l'utilisateur
+    /// </summary>
+    /// <param name="panier"></param>
+    /// <param name="userCode"></param>
+    /// <param name="userName"></param>
     public static void Supprimer(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
       //-- Démarre la boucle de suppression

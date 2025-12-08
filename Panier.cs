@@ -6,7 +6,11 @@ namespace ProjetFinal
 {
   class Panier
   {
-    
+    /// <summary>
+    /// Cette procédure permet d'affichier le panier à l'utilisateur
+    /// Si le panier est vide, l'utilisateur est informé
+    /// </summary>
+    /// <param name="panier"></param>
     public static void Affichage(List<(string code, string nom, decimal prix)> panier)
     {
       Console.Clear();

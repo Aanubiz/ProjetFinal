@@ -5,7 +5,17 @@ namespace ProjetFinal
 {
   class MenuPrincipal
   {
-    
+    /// <summary>
+    /// cette procedure permet d'afficher les options du menu
+    /// il reçoit les paramettres id, noms et panier
+    /// 
+    /// Cette procédure permet à l'utilisateur d'interagir avec le programme
+    /// en sélectionnant grace aux case, des options de d'ajouts, de suppression d'affichage et de facturation
+    /// 
+    /// </summary>
+    /// /// <param name="panier"></param>
+    /// <param name="userCode"></param>
+    /// <param name="userName"></param>
     public static void AffichageMenu() //-- Cette méthode affiche juste le menu
     {
       Console.ForegroundColor = ConsoleColor.Cyan;
@@ -53,6 +63,8 @@ namespace ProjetFinal
             else
             {
               Facturation.Facture(panier, userCode, userName); //-- Si le nombre est supérieur a 0, on affiche le panier
+              Console.WriteLine("\n\nAppuyez sur n'importe quelle touche pour fermer l'application...");
+              Console.ReadKey();
               return;
             }
             break;
