@@ -7,55 +7,47 @@ namespace ProjetFinal
   {
     public static void Supprimer(List<(string code, string nom, decimal prix)> panier, string userCode, string userName)
     {
-      // Démarre la boucle de suppression
+      //-- Démarre la boucle de suppression
       while (true)
       {
         Console.Write("Sélectionnez le code de l'article à supprimer ou appuyez sur 'q' pour quitter\n\n => ");
-        // Utilisation du string? pour gérer la nullité potentielle de Console.ReadLine()
+        
         string article_supprimé = Console.ReadLine();
 
         if (article_supprimé == "q")
         {
-          // Retourne au menu principal
+          //-- Retourne au menu principal
           MenuPrincipal.Menu(panier, userCode, userName);
-          // Sort de la fonction Supprimer et met fin à la boucle infinie
+          //-- Sort de la fonction Supprimer et met fin à la boucle
           return; 
         }
 
-        // Reset du drapeau de vérification pour cette tentative de suppression
+        //-- La variable booléenne ici vérifie permettra de vérifier que l'entré utilisateur correspond a un article deja dans le panier
         bool verifCode = false;
 
-        // 2. Recherche et suppression de l'article
-        // IMPORTANT : Pour éviter l'erreur de modification de la collection lors de l'itération,
-        // nous utilisons une boucle for inversée ou nous sortons immédiatement après Remove.
-        // Pour respecter votre structure de foreach, nous allons chercher l'index et sortir.
-
-        // Trouver l'index de l'article pour une suppression sûre
+        //-- Etant donné que les index d'une listes commencent toujours à 0, on initialise notre variable à -1 pour être sûr qu'elle ne contiendra rien 
         int indexASupprimer = -1;
         for (int i = 0; i < panier.Count; i++)
         {
-            if (panier[i].code == article_supprimé)
+            if (panier[i].code == article_supprimé) //-- Si le code entré par l'utilisateur coorespond a un article existant dans le panier
             {
-                indexASupprimer = i;
-                break; // Article trouvé, on sort de la boucle de recherche
+                indexASupprimer = i; //-- On affecte l'index correspondant a notre variable
+                break; //-- Et on sort de la boucle
             }
         }
 
-        if (indexASupprimer != -1)
+        if (indexASupprimer != -1) //-- Si l'index est différent de -1
         {
-            // Suppression de l'élément à l'index trouvé
-            panier.RemoveAt(indexASupprimer);
+            panier.RemoveAt(indexASupprimer); //-- On le supprime
             verifCode = true;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"  ✅ '{article_supprimé}' retiré du panier.");
+            Console.WriteLine($"  ✅ '{article_supprimé}' retiré du panier."); //-- Et on dit à l'utilisateur qu'il a été supprimé
             Console.ResetColor();
             
-            // L'article a été trouvé et supprimé. On sort de la boucle while pour revenir à la saisie.
-            // La boucle while recommence pour demander la prochaine action.
         }
-
-        /*---   Si l'utilisateur entre un code non valide --------*/
-        if (verifCode == false)
+        //-- Le programe continu mais comme notre booléen est encore à 'true'
+        //-- cette condition est donc fausse et ne s'exécute pas, la boucle reprend pour supprimer un autre article
+        if (verifCode == false) 
         {
           Console.ForegroundColor = ConsoleColor.Red;
           Console.WriteLine($"  ❌ Cet article n'est pas dans votre panier.");
