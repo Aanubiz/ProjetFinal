@@ -7,14 +7,16 @@ namespace ProjetFinal
   {
      static void Main()
     {
-      // pour que le code accepte les emodji 
+      /*-- pour afficher correctement les emojis dans le terminal --*/ 
       Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-      // declaration du liste panier
-      List<(string code, string nom, decimal prix)> panier = new List<(string code, string nom, decimal prix)>();
+      /*-- declaration de la liste 'panier' 
+      Cette liste est déclaré dans le Main car 
+      elle sera appelé dans d'autres procédures --*/
+      List<(string code, string nom, decimal prix)> panier = new();
       
-      Authentification.CodeUtilisateur();
-     
+      /*-- Appel de la procédure Authetification --*/
+      Authentification.CodeUtilisateur(panier);
     }
   }
 }
